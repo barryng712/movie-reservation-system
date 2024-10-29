@@ -94,26 +94,40 @@ Special thanks to the [Movie Reservation System](https://roadmap.sh/projects/mov
 ## API Endpoints
 
 ### Authentication
-* POST /auth/signup: Register a new user.
+* POST /auth/register: Register a new user.
 * POST /auth/login: Log in an existing user.
+* POST /auth/logout: Logout
 
-### Movies (Admin only)
-* POST /movies: Create a new movie.
-* PUT /movies/:movieId: Update a movie.
-* DELETE /movies/:movieId: Delete a movie.
-* GET /movies: Fetch all movies.
+### Room
+* POST /rooms/: Create a room. (Admin only).
+* GET /rooms/: Get all rooms
+* GET /rooms/:id :get room by id
+* PATCH /rooms/:id: Update a room. (Admin only).
+
+### Movies 
+* POST /movies/: Create a new movie. (Admin only).
+* GET /movies/: Get all movies
+* GET /movies/:id :get movie by id
+* PATCH /movies/:id: Update a movie. (Admin only).
+* DELETE /movies/:id: Delete a movie. (Admin only).
 
 ### Showtimes
-* POST /movies/:movieId/showtimes: Create a new showtime for a movie (Admin only).
-* GET /movies/:movieId/showtimes: Fetch all showtimes for a movie.
+* GET /showtimes/: Get all showtimes
+* POST /showtimes/: Create showtime (Admin only).
+* GET /showtimes/:id : Get showtime by id
+* PATCH /showtimes/:id: update showtime (Admin only).
+* DELETE /showtimes/:id: delete showtime (admin only).
+* GET /showtimes/:id/seats: get available seats.
 
 ### Reservations
-* POST /reservations: Reserve seats for a showtime.
-* GET /reservations/my-reservations: Fetch all reservations for the logged-in user.
-* DELETE /reservations/:reservationId: Cancel a reservation.
+* POST /reservations/: create a reservation.
+* GET /reservations/: Fetch all reservations for the logged-in user.
+* GET /reservations/: Fet all reservations for all users (admin only)
+* DELETE /reservations/:id: Cancel a reservation.
 
 ### Admin Reports
-* GET /reservations/showtime/:showtimeId: Fetch all reservations for a specific showtime (Admin only).
+* GET /revenues/: get revenue for all showtime (Admin only).
+* GET /revenues/:id: get revenue for a specific showtime. (admin only).
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
